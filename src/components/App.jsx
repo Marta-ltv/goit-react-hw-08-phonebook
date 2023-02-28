@@ -1,20 +1,22 @@
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
 
-import Filter from './Filter/Filter';
-import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+// import { useSelector } from 'react-redux';
+// import { selectContacts } from 'redux/contacts/selectors';
+import { Layout } from './Layout';
+import { Route, Routes } from 'react-router-dom';
+import { Contacts } from 'pages/Contacts/Contacts';
 
 export default function App() {
-  const { contacts } = useSelector(selectContacts);
+  // const { contacts } = useSelector(selectContacts);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      {contacts.length > 0 && <Filter />}
-      <ContactList />
-    </div>
+    <Routes>
+      <Route path="/" element>{<Layout/>}</Route>
+       {/* <Route index element={<Home/>} */}
+      <Route>{<Contacts/> }</Route>
+      
+   </Routes>
+      
+      
+   
   );
 }

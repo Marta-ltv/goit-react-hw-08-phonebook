@@ -5,8 +5,8 @@ import {
   ContactListItem,
   DeleteButton
 } from './ContactList.styled';
-import { fetchContacts, deleteContact } from 'redux/operations';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { fetchContacts, deleteContact } from 'redux/contacts/operations';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 
 
 export default function ContactList() {

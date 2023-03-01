@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 
 
-export const Contacts = () => {
+export default function Contacts () {
     const { contacts } = useSelector(selectContacts);
 
     return (

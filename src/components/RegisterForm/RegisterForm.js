@@ -1,21 +1,36 @@
-import { Form,FormInput,FormLabel } from "./RegisterForm.styled"
+import { Form, FormInput, FormLabel } from "./RegisterForm.styled"
+import { useDispatch } from "react-redux";
+import { register } from "redux/auth/auth-operations";
 
 export const RegisterForm = () => {
+    const dispatch = useDispatch();
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        
+        dispatch(register({
+            name: form.elements.name.value,
+            email: form.elements.email.value,
+            password: form.elements.password.value
+        })
+        );
+        form.reset();
+    };     
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <FormLabel>
                 Username
-                <FormInput type="text"/>
+                <FormInput type="text" name="name"/>
             </FormLabel>
              <FormLabel>
                 Email
-                <FormInput type="text"/>
+                <FormInput type="text" name="email"/>
             </FormLabel>
             <FormLabel>
                 Password
-                <FormInput type="text"/>
+                <FormInput type="text" name="password"/>
             </FormLabel>
             <button type="submit">Register</button>
         </Form>

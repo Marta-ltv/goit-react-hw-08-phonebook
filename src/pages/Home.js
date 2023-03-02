@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <div>
             <h1>
-                Task manager welcome page{' '}
+                Welcome to your Phonebook
             </h1>
         </div>
     );

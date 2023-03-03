@@ -13,6 +13,7 @@ export default function Contacts () {
         <>
             <h1>Phonebook</h1>
             <ContactForm />
+            <h2>Contacts</h2>
             {contacts.length > 0 && <Filter />}
             <ContactList />
         </>

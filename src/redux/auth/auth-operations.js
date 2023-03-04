@@ -64,7 +64,31 @@ export const logOut = createAsyncThunk(
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
-});
+  });
+
+
+  /*
+ * GET @ /users/current
+ * headers: Authorization: Bearer token
+ */
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth;
+    if (!token) {
+       // Reading the token from the state via getState()
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      // If there is a token, add it to the HTTP header and perform the request
+      setAuthHeader(token);
+      const response = await axios.get('/users/current')
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
 
 
 

@@ -33,11 +33,11 @@ export default function ContactList() {
       {isLoading && <b>Loading contacts...</b>}
       {error && <b>{error}</b>}
       {contacts.length > 0 &&
-        filteredContacts.map(({ id, name, phone }) => (
+        filteredContacts.map(({ id, name, number }) => (
          
             <ContactListItem  key={id}>
             <p>
-              {name}: {phone}
+              {name}: {number}
             </p>
             <DeleteButton
               type="button"

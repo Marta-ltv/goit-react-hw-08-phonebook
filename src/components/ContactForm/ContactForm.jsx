@@ -1,6 +1,5 @@
 
 import { Form, Label, Input, Button } from './ContactForm.styled';
-
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
@@ -9,7 +8,7 @@ import { selectContacts } from 'redux/contacts/selectors';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
   const { contacts } = useSelector(selectContacts);
 
@@ -20,8 +19,8 @@ export default function ContactForm() {
         setName(value);
         break;
 
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
 
       default:
@@ -31,7 +30,7 @@ export default function ContactForm() {
 
   const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   const formSubmit = e => {
@@ -45,7 +44,7 @@ export default function ContactForm() {
       }
     });
     if (result) {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
       resetForm();
     }
   };
@@ -69,9 +68,9 @@ export default function ContactForm() {
       <Label  htmlFor="tel">
         Number
         <Input
-          value={phone}
+          value={number}
           onChange={handleChange}
-          name="phone"
+          name="number"
           placeholder="Number"
           type="tel"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

@@ -12,7 +12,7 @@ font-size:25px;
 color:black;
 
 &.active{
-  color: red;
+  color: lightgray;
   text-decoration:underline;
 }
 `;

@@ -1,15 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-
-`;
-
-export const Button = styled.button`
-display:inline-block;
+display:flex;
+align-items: center;
 justify-content:center;
-align-items:center;
-padding:5px;
 `;
+
 
 export const Title= styled.p`
 display:inline-block;

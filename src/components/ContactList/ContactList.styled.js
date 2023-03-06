@@ -11,7 +11,7 @@ font-size: 30px;
 font-weight: 400;
 display:flex;
 align-items:center;
-
+justify-content:center;
 `;
 
 export const ButtonDelete = styled.button`

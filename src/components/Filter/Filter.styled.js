@@ -1,13 +1,18 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
-export const FilterLabel = styled.label`
-padding: 20px;
-font-weight: 600;
-`
+export const Form = styled.form`
+margin:auto;
+padding-top: 50px;
+width:360px;
+`;
 
-export const FilterInput = styled.input`
-padding: 10px;
-border-radius: 8px;
-margin-left: 10px;
-`
+export const FormInput = styled.input`
+background: lightgrey;
+height:30px;
+`;
 
+export const FormLabel = styled.label`
+display:flex;
+flex-direction:column;
+margin-bottom:16px;
+`;

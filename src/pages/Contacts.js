@@ -4,7 +4,7 @@ import ContactList from "components/ContactList/ContactList";
 import Filter from "components/Filter/Filter";
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
-
+import { Title, ContactsTitle } from "./Contacts.styled";
 
 
 export default function Contacts () {
@@ -12,9 +12,9 @@ export default function Contacts () {
 
     return (
         <>
-            <h1>Phonebook</h1>
+            <Title>Phonebook</Title>
             <ContactForm />
-            <h2>Contacts</h2>
+            <ContactsTitle>Contacts</ContactsTitle>
             {contacts.length > 0 && <Filter />}
             <ContactList />
         </>

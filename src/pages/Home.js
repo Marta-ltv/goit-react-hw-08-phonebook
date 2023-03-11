@@ -1,4 +1,6 @@
-import { HomeTitle } from "./Home.styled"; 
+import { HomeTitle } from "./Home.styled";
+
+
 
 export default function Home() {
     return (

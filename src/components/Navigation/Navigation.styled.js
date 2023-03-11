@@ -14,5 +14,9 @@ color:black;
 &.active{
   color:lightgray;
   text-decoration:underline;
+  display: inline-block;
+margin: 0 0.5rem;
+animation: heartBeat; 
+animation-duration: 5s;
 }
 `;

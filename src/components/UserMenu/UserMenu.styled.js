@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import 'animate.css';
+
 
 export const Wrapper = styled.div`
 display:flex;
@@ -16,9 +18,8 @@ font-family: sans-serif;
 font-weight:700;
 font-size:25px;
 color:black;
+margin: 0 0.5rem;
+animation: backInDown; 
+animation-duration: 2s;
 
-&.active{
-  color: red;
-  text-decoration:underline;
-}
 `;

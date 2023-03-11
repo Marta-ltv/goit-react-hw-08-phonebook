@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import 'animate.css';
 
 export const HomeLink = styled(NavLink)`
 display:inline-block;
